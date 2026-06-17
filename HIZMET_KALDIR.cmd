@@ -10,13 +10,14 @@ if /i not "%~1"=="admin" (
 echo KutukDPI durduruluyor...
 taskkill /F /IM kutukdpi.exe 2>nul
 taskkill /F /IM ciadpi.exe 2>nul
-
 sc stop KutukProxy 2>nul
 sc delete KutukProxy 2>nul
-sc stop KutukDPI 2>nul
-sc delete KutukDPI 2>nul
-sc stop WinDivert 2>nul
-sc delete WinDivert 2>nul
+sc stop "KutukDPI" 2>nul
+sc delete "KutukDPI" 2>nul
+sc stop "WinDivert" 2>nul
+sc delete "WinDivert" 2>nul
+sc stop "WinDivert14" 2>nul
+sc delete "WinDivert14" 2>nul
 
 netsh advfirewall firewall delete rule name="KutukDPI ByeDPI" >nul 2>&1
 
@@ -26,5 +27,6 @@ for /d %%D in ("%LOCALAPPDATA%\Discord\app-*") do (
     del "%%D\d3d11.dll" 2>nul
 )
 
-echo Hizmetler ve Discord drover kaldirildi.
+echo.
+echo KutukDPI tamamen kaldirildi.
 pause

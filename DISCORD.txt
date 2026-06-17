@@ -1,17 +1,28 @@
-DISCORD MASAUSTU UYGULAMASI
-===========================
+DISCORD UYGULAMASI ACILMIYORSA
+================================
 
-KutukDPI artik Discord.exe icin ByeDPI + drover kullanir.
-(Tarayici PWA gerekmez - gercek Discord uygulamasi)
+DNS AYARI (ONEMLI)
+------------------
+Windows ag ayarlarinda DNS:
+  Birincil: 1.1.1.1
+  Ikincil:  1.0.0.1
+Sonra bilgisayari yeniden baslat veya ag baglantisini yenile.
 
-KURULUM SONRASI:
-1. Gorev Yoneticisi -> Discord'u kapat
-2. Discord'u normal ac
+NOT: Tarayici Discord'u KutukDPI olmadan da acabilir.
+Chrome ve Edge "Guvenli DNS" kullanir. Web acilip uygulama
+acilmiyorsa bu farkli bir seydir.
 
-ACILMIYORSA:
-1. discord_temizle.cmd
-2. HIZMET_KALDIR.cmd
-3. HIZMET_KUR.cmd
-4. Discord'u ac
+ONBELLEK TEMIZLE + TEKRAR DENE
+------------------------------
+1. Discord'u Gorev Yoneticisinden kapat
+2. discord_temizle.cmd
+3. HIZMET_KALDIR.cmd
+4. HIZMET_KUR.cmd
+5. Discord uygulamasini ac
 
-Discord kurulu degilse once discord.com/download adresinden kur.
+HALA OLMUYORSA
+--------------
+Vodafone hattinda Discord.exe icin KutukDPI yetmeyebilir.
+Bu durumda SplitWire-Turkey gibi Discord'a ozel araclar
+daha iyi calisabilir:
+https://github.com/cagritaskn/SplitWire-Turkey

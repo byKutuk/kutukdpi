@@ -1,11 +1,16 @@
 KUTUKDPI KURULUM
 ================
 
-1. Discord masaustu uygulamasini kur (discord.com/download)
-2. ZIP'i C:\KutukDPI\ gibi sabit yere ac (tasima!)
-3. HIZMET_KUR.cmd -> Evet
-4. Gorev Yoneticisi -> Discord kapat -> Discord ac
+1. Windows DNS ayarla (onerilen):
+   Birincil: 1.1.1.1
+   Ikincil:  1.0.0.1
+
+2. ZIP'i C:\KutukDPI\ gibi sabit bir yere ac (tasima!)
+
+3. HIZMET_KUR.cmd -> cift tik -> Evet
+
+4. Discord'u ac
 
 KALDIR: HIZMET_KALDIR.cmd
 
-SORUN: DISCORD.txt
+SORUN: Discord uygulamasi acilmiyorsa -> DISCORD.txt

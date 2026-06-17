@@ -22,18 +22,3 @@ KutukDPI'nin `src/` dizinindeki C kaynak kodu GoodbyeDPI'den turetilmistir. DPI 
 
 - **uthash** — Troy D. Hanson (BSD)
 - **getline** — Chris Snyder (public domain)
-
-## ByeDPI
-
-- **Yazar:** hufrea
-- **Kaynak:** https://github.com/hufrea/byedpi
-- **Lisans:** Apache License 2.0
-
-`byedpi/ciadpi.exe` Discord proxy motoru olarak kullanilir.
-
-## drover
-
-- **Yazar:** hdrover
-- **Kaynak:** https://github.com/hdrover/discord-drover
-
-Discord.exe trafik yonlendirmesi icin `drover/version.dll` kullanilir.

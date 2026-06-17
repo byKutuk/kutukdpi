@@ -9,16 +9,11 @@ set "KUTUK_EXE="
 if exist "%KUTUK_ROOT%x86_64\kutukdpi.exe" set "KUTUK_EXE=%KUTUK_ROOT%x86_64\kutukdpi.exe"
 if not defined KUTUK_EXE if exist "%KUTUK_ROOT%%KUTUK_ARCH%\kutukdpi.exe" set "KUTUK_EXE=%KUTUK_ROOT%%KUTUK_ARCH%\kutukdpi.exe"
 
-set "KUTUK_BYEDPI="
-if exist "%KUTUK_ROOT%byedpi\ciadpi.exe" set "KUTUK_BYEDPI=%KUTUK_ROOT%byedpi\ciadpi.exe"
-
-set "KUTUK_DROVER_DLL="
-if exist "%KUTUK_ROOT%drover\version.dll" set "KUTUK_DROVER_DLL=%KUTUK_ROOT%drover\version.dll"
-
-if not defined KUTUK_BYEDPI (
+if not defined KUTUK_EXE (
     echo.
-    echo [HATA] byedpi\ciadpi.exe bulunamadi!
-    echo ZIP dosyasini tamamen ac.
+    echo [HATA] kutukdpi.exe bulunamadi!
+    echo ZIP dosyasini tamamen ac: %KUTUK_ROOT%x86_64\kutukdpi.exe
+    echo.
     pause
     exit /b 1
 )
