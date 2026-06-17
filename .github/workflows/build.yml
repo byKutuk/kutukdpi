@@ -22,7 +22,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Declare short commit variable
         id: vars
@@ -36,7 +36,7 @@ jobs:
 
       - name: Download WinDivert from cache
         id: windivert-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ${{ env.WINDIVERT_NAME }}
           key: ${{ env.WINDIVERT_SHA256 }}
@@ -67,7 +67,7 @@ jobs:
           cp README.md LICENSE CREDITS.md release/
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: kutukdpi_x86_64_${{ steps.vars.outputs.sha_short }}
           path: release/
