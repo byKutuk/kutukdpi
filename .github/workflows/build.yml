@@ -21,7 +21,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Declare short commit variable
         id: vars
@@ -64,7 +64,7 @@ jobs:
           cp HIZMET_KUR.cmd HIZMET_KALDIR.cmd discord_temizle.cmd _setup.cmd KURULUM.txt DISCORD.txt README.md LICENSE release/
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: kutukdpi_x86_64_${{ steps.vars.outputs.sha_short }}
           path: release/
