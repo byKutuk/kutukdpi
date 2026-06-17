@@ -1,0 +1,36 @@
+DISCORD ACILMIYORSA - SIRAYLA DENE
+====================================
+
+1) Discord'u tamamen kapat
+   - Gorev Yoneticisi (Ctrl+Shift+Esc)
+   - Discord varsa "Gorevi sonlandir"
+
+2) KutukDPI'yi ONCE baslat, Discord'u SONRA ac
+   - BASLAT_TAM.cmd dene (en guclu mod)
+   - Pencereyi KAPATMA
+
+3) Hala olmuyorsa sirayla dene:
+   - BASLAT_VODAFONE.cmd
+   - BASLAT.cmd
+   - vodafone_discord_alternative.cmd
+
+4) Windows DNS degistir (Vodafone onemli):
+   Ayarlar > Ag ve Internet > Wi-Fi/Ethernet > DNS
+   Elle DNS: 77.88.8.8 ve 77.88.8.1
+   veya 1.1.1.1 ve 1.0.0.1
+
+5) Tarayicida dene:
+   https://discord.com
+   Web aciliyorsa sorun Discord uygulamasindadir.
+
+6) Discord uygulamasi hala acilmiyorsa (fiber/Vodafone):
+   - Windows VPN ac (ucretsiz/hotspot VPN)
+   - Discord acilana kadar bekle
+   - VPN kapat, Discord acik kalsin
+   (KutukDPI de acik kalsin)
+
+7) Antivirus:
+   KutukDPI klasorunu Windows Defender dislamalarina ekle.
+
+8) Yeni surum indir:
+   GitHub Actions'tan en son build ZIP'ini tekrar indir.
