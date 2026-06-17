@@ -1,38 +1,30 @@
 # KutukDPI
 
-Vodafone ve diger Turk ISP'lerde Discord gibi engelli hizmetlere **VPN kullanmadan** erismek icin acik kaynak Windows araci.
+Vodafone ve Turk ISP'lerde **Discord masaustu uygulamasina** VPN'siz erisim.
 
-[GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) tabanli. **WinDivert** ile ag paketlerini yakalar, DPI engelini atlatir. Bulut servisi degil; bilgisayarinda arka planda calisir.
+- **GoodbyeDPI** (`kutukdpi.exe`) — genel DPI atlatma
+- **ByeDPI** (`ciadpi.exe`) + **drover** — Discord.exe trafik yonlendirme
 
 ## Kurulum
 
-1. GitHub Actions'tan en son build ZIP'ini indir
-2. `C:\KutukDPI\` gibi sabit bir konuma cikar — **tasima**
-3. `HIZMET_KUR.cmd` → cift tik → **Evet**
-
-Arka planda Windows hizmeti olarak calisir. Pencere gerekmez, her acilista otomatik baslar.
+1. GitHub Actions'tan ZIP indir
+2. `C:\KutukDPI\` gibi sabit konuma cikar — **tasima**
+3. Discord masaustu uygulamasi kurulu olsun
+4. `HIZMET_KUR.cmd` → Evet
+5. Discord'u kapat ve tekrar ac
 
 Kaldirmak: `HIZMET_KALDIR.cmd`
 
-## Gereksinimler
+## Nasil calisir?
 
-- Windows 10/11, 64-bit
-- Yonetici yetkisi (kurulumda)
-- KutukDPI klasorunu antivirus dislamalarina ekle
+Discord.exe normalde sistem agini kullanir ve Vodafone'da engellenir.
+KutukDPI, Discord trafikini yerel ByeDPI proxy'sine (127.0.0.1:1080) yonlendirir.
+drover DLL'i bunu Discord uygulamasina enjekte eder.
 
-## Bilinen sorunlar
+## Sorun giderme
 
-- Discord **web** acilip **uygulama** acilmiyorsa: bkz. [DISCORD.txt](DISCORD.txt) — tarayicidan "Uygulama olarak yukle" en kolay cozum
-- Kaspersky WinDivert ile uyumsuz olabilir
-- Klasor tasinirsa hizmet calismaz
-
-## Derleme
-
-```bash
-cd src && make CPREFIX=x86_64-w64-mingw32- BIT64=1 \
-  WINDIVERTHEADERS=../WinDivert/include WINDIVERTLIBS=../WinDivert/x64
-```
+Bkz. [DISCORD.txt](DISCORD.txt)
 
 ## Lisans
 
-Apache 2.0 — bkz. [LICENSE](LICENSE). Atiflar: [CREDITS.md](CREDITS.md)
+Apache 2.0 — bkz. [LICENSE](LICENSE), [CREDITS.md](CREDITS.md)

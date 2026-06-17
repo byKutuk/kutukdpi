@@ -16,6 +16,8 @@ env:
   WINDIVERT_NAME: WinDivert-2.2.0-D.zip
   WINDIVERT_BASENAME: WinDivert-2.2.0-D
   WINDIVERT_SHA256: 1d461cfdfa7ba88ebcfbb3603b71b703e9f72aba8aeff99a75ce293e6f89d2ba
+  BYEDPI_URL: https://github.com/hufrea/byedpi/releases/download/v0.17.3/byedpi-17.3-x86_64-w64.zip
+  DROVER_URL: https://github.com/hdrover/discord-drover/releases/download/v0.9/drover-v0.9.zip
 
 jobs:
   build:
@@ -49,6 +51,13 @@ jobs:
       - name: Unpack WinDivert
         run: unzip ${{ env.WINDIVERT_NAME }}
 
+      - name: Download ByeDPI and drover
+        run: |
+          wget -O byedpi.zip ${{ env.BYEDPI_URL }}
+          wget -O drover.zip ${{ env.DROVER_URL }}
+          unzip -q byedpi.zip -d byedpi-extract
+          unzip -q drover.zip -d drover-extract
+
       - name: Compile x86_64
         run: |
           cd src
@@ -59,9 +68,12 @@ jobs:
 
       - name: Prepare release directory
         run: |
-          mkdir -p release/x86_64
+          mkdir -p release/x86_64 release/byedpi release/drover
           cp src/kutukdpi.exe ${{ env.WINDIVERT_BASENAME }}/x64/WinDivert.dll ${{ env.WINDIVERT_BASENAME }}/x64/WinDivert64.sys release/x86_64/
-          cp HIZMET_KUR.cmd HIZMET_KALDIR.cmd discord_temizle.cmd _setup.cmd KURULUM.txt DISCORD.txt README.md LICENSE release/
+          find byedpi-extract -name ciadpi.exe -exec cp {} release/byedpi/ \;
+          cp drover-extract/version.dll drover-extract/d3d11.dll release/drover/ 2>/dev/null || cp drover-extract/*/version.dll release/drover/
+          cp drover-extract/d3d11.dll release/drover/ 2>/dev/null || cp drover-extract/*/d3d11.dll release/drover/ 2>/dev/null || true
+          cp HIZMET_KUR.cmd HIZMET_KALDIR.cmd discord_temizle.cmd _setup.cmd _discord_drover.cmd KURULUM.txt DISCORD.txt README.md LICENSE CREDITS.md release/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v6

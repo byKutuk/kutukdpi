@@ -12,36 +12,51 @@ call "%~dp0_setup.cmd"
 if errorlevel 1 exit /b 1
 
 echo ============================================
-echo   KUTUKDPI - ARKA PLAN HIZMETI KURULUMU
+echo   KUTUKDPI - DISCORD UYGULAMASI KURULUMU
 echo ============================================
 echo.
-echo KutukDPI arka planda calisacak.
+echo Discord.exe icin ByeDPI + drover kurulacak.
 echo ONEMLI: Bu klasoru tasima!  %KUTUK_ROOT%
 echo.
 pause
 
-echo Eski hizmet kontrol ediliyor (ilk kurulumda uyari normaldir)...
-sc query KutukDPI >nul 2>&1
-if %errorlevel%==0 (
-    sc stop "KutukDPI" >nul 2>&1
-    sc delete "KutukDPI" >nul 2>&1
-) else (
-    echo Onceki hizmet yok, yeni kurulum yapiliyor...
-)
+echo Eski hizmetler kaldiriliyor...
+sc query KutukProxy >nul 2>&1 && (sc stop KutukProxy >nul 2>&1 & sc delete KutukProxy >nul 2>&1)
+sc query KutukDPI >nul 2>&1 && (sc stop KutukDPI >nul 2>&1 & sc delete KutukDPI >nul 2>&1)
 
-REM Turkiye/Vodafone icin test edilmis mod (-5 + TTL + DNS)
-sc create "KutukDPI" binPath= "\"%KUTUK_EXE%\" -5 --set-ttl 5 --dns-addr 77.88.8.8 --dns-port 1253 --dnsv6-addr 2a02:6b8::feed:0ff --dnsv6-port 1253" start= auto
+echo.
+echo [1/3] ByeDPI proxy hizmeti kuruluyor...
+sc create KutukProxy binPath= "\"%KUTUK_BYEDPI%\" --port 1080 --disorder 1 --split 1+s" start= auto
+sc description KutukProxy "KutukDPI Discord proxy (ByeDPI)"
+sc start KutukProxy
 if errorlevel 1 (
-    echo [HATA] Hizmet kurulamadi.
+    echo [HATA] KutukProxy baslatilamadi.
     pause
     exit /b 1
 )
 
-sc description "KutukDPI" "Vodafone ve Turk ISP'lerde DPI engelini arka planda atlatir."
-sc start "KutukDPI"
+echo.
+echo [2/3] Discord uygulamasina drover kuruluyor...
+call "%~dp0_discord_drover.cmd"
 
 echo.
-echo KutukDPI arka planda calisiyor.
-echo Discord uygulamasi acilmiyorsa DISCORD.txt dosyasina bak.
-echo Kaldirmak icin: HIZMET_KALDIR.cmd
+echo [3/3] Genel DPI hizmeti kuruluyor...
+if defined KUTUK_EXE (
+    sc create KutukDPI binPath= "\"%KUTUK_EXE%\" -f 2 -e 2 --wrong-seq --wrong-chksum --reverse-frag --max-payload --dns-addr 77.88.8.8 --dns-port 1253 --dnsv6-addr 2a02:6b8::feed:0ff --dnsv6-port 1253" start= auto
+    sc description KutukDPI "KutukDPI genel DPI atlatma (GoodbyeDPI)"
+    sc start KutukDPI
+)
+
+netsh advfirewall firewall add rule name="KutukDPI ByeDPI" dir=in action=allow program="%KUTUK_BYEDPI%" enable=yes >nul 2>&1
+
+echo.
+echo ============================================
+echo   TAMAM!
+echo ============================================
+echo.
+echo 1. Discord'u GOREV YONETICISINDEN kapat
+echo 2. Discord'u tekrar ac
+echo.
+echo Hala acilmazsa: discord_temizle.cmd sonra tekrar HIZMET_KUR.cmd
+echo.
 pause

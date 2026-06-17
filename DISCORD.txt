@@ -1,39 +1,17 @@
-DISCORD UYGULAMASI ACILMIYORSA
-================================
+DISCORD MASAUSTU UYGULAMASI
+===========================
 
-ONEMLI: Tarayici Discord'u KutukDPI olmadan da acabilir!
-Chrome ve Edge "Guvenli DNS" kullanir, Vodafone DNS engelini atlar.
-Hizmeti kaldirdigin halde web aciliyorsa bu normaldir.
+KutukDPI artik Discord.exe icin ByeDPI + drover kullanir.
+(Tarayici PWA gerekmez - gercek Discord uygulamasi)
 
-Masaustu Discord.exe ise sistem DNS kullanir ve Vodafone'da
-cogu zaman KutukDPI ile bile acilmaz. Bu senin hatan degil.
+KURULUM SONRASI:
+1. Gorev Yoneticisi -> Discord'u kapat
+2. Discord'u normal ac
 
-COZUM 1 - EN KOLAY (ONERILEN)
------------------------------
-Chrome veya Edge:
-  discord.com -> giris yap -> "Uygulama olarak yukle"
-Gercek uygulama gibi masaustunden kullanirsin. En guvenilir yol.
-
-COZUM 2 - VPN ILE BIR KEZ AC (.exe istiyorsan)
-----------------------------------------------
-1. Gorev Yoneticisi -> Discord kapali olsun
-2. Telefon hotspot VPN veya ucretsiz VPN ac
-3. Discord uygulamasini ac, tam yuklensin, giris yap
-4. VPN kapat - Discord acik kalsin
-(KutukDPI sart degil bu yontemde)
-
-COZUM 3 - ONBELLEK TEMIZLE + TEKRAR DENE
-----------------------------------------
-1. Discord'u Gorev Yoneticisinden kapat
-2. discord_temizle.cmd
+ACILMIYORSA:
+1. discord_temizle.cmd
+2. HIZMET_KALDIR.cmd
 3. HIZMET_KUR.cmd
-4. Discord uygulamasini ac
+4. Discord'u ac
 
-HALA OLMUYORSA
---------------
-Vodafone hattinda Discord.exe icin KutukDPI yetmeyebilir.
-SplitWire-Turkey gibi sadece Discord.exe hedefleyen araclar
-bu durumda daha iyi calisir:
-https://github.com/cagritaskn/SplitWire-Turkey
-
-Web veya "uygulama olarak yukle" ile devam etmek en pratik cozumdur.
+Discord kurulu degilse once discord.com/download adresinden kur.

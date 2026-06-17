@@ -1,12 +1,11 @@
 KUTUKDPI KURULUM
 ================
 
-1. ZIP'i C:\KutukDPI\ gibi sabit bir yere ac (tasima!)
-
-2. HIZMET_KUR.cmd -> cift tik -> Evet
-
-3. Discord'u ac
+1. Discord masaustu uygulamasini kur (discord.com/download)
+2. ZIP'i C:\KutukDPI\ gibi sabit yere ac (tasima!)
+3. HIZMET_KUR.cmd -> Evet
+4. Gorev Yoneticisi -> Discord kapat -> Discord ac
 
 KALDIR: HIZMET_KALDIR.cmd
 
-SORUN: Discord uygulamasi acilmiyorsa -> DISCORD.txt
+SORUN: DISCORD.txt
