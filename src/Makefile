@@ -56,5 +56,5 @@ $(TARGET): $(OBJECTS)
 	$(CC) $(OBJECTS) $(LDFLAGS) $(LIBS) -s -o $@
 
 clean:
-	-rm -f *.o utils/*.o
+	-rm -f *.o utils/*.o goodbyedpi-rc.o
 	-rm -f $(TARGET)
