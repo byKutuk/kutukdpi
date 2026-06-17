@@ -18,6 +18,13 @@ KutukDPI'nin `src/` dizinindeki C kaynak kodu GoodbyeDPI'den turetilmistir. DPI 
 
 `WinDivert.dll` ve `WinDivert64.sys` dosyalari WinDivert surumunden gelir ve derleme/release paketine dahil edilir.
 
+## GoodbyeDPI-Turkey
+
+- **Yazar:** cagritaskn
+- **Kaynak:** https://github.com/cagritaskn/GoodbyeDPI-Turkey
+
+ISP profilleri (Turkiye, Superonline alternatifleri vb.) bu projeden esinlenmistir.
+
 ## Diger bagimliliklar
 
 - **uthash** — Troy D. Hanson (BSD)

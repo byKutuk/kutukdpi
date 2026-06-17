@@ -1,28 +1,18 @@
 DISCORD UYGULAMASI ACILMIYORSA
 ================================
 
-DNS AYARI (ONEMLI)
-------------------
-Windows ag ayarlarinda DNS:
-  Birincil: 1.1.1.1
-  Ikincil:  1.0.0.1
-Sonra bilgisayari yeniden baslat veya ag baglantisini yenile.
+1. HIZMET_KALDIR.cmd
+2. HIZMET_KUR.cmd -> Vodafone + Discord hedefli mod (4)
+3. discord_temizle.cmd
+4. Discord'u ac
 
-NOT: Tarayici Discord'u KutukDPI olmadan da acabilir.
-Chrome ve Edge "Guvenli DNS" kullanir. Web acilip uygulama
-acilmiyorsa bu farkli bir seydir.
+VODAFONE KULLANICILAR:
+  Masaustu Discord.exe sik sik acilmaz.
+  Web Discord (discord.com) genelde calisir.
 
-ONBELLEK TEMIZLE + TEKRAR DENE
-------------------------------
-1. Discord'u Gorev Yoneticisinden kapat
-2. discord_temizle.cmd
-3. HIZMET_KALDIR.cmd
-4. HIZMET_KUR.cmd
-5. Discord uygulamasini ac
+SUPERONLINE KULLANICILAR:
+  "Discord update failed" -> HIZMET_KUR mod 7 -> mod 4
 
-HALA OLMUYORSA
---------------
-Vodafone hattinda Discord.exe icin KutukDPI yetmeyebilir.
-Bu durumda SplitWire-Turkey gibi Discord'a ozel araclar
-daha iyi calisabilir:
-https://github.com/cagritaskn/SplitWire-Turkey
+HALA OLMUYORSA:
+  Tarayicida discord.com kullan veya
+  SplitWire-Turkey: https://github.com/cagritaskn/SplitWire-Turkey

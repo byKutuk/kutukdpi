@@ -1,39 +1,34 @@
-# KutukDPI
+# KutukDPI Turkiye
 
-Vodafone ve diger Turk ISP'lerde Discord gibi engelli hizmetlere **VPN kullanmadan** erismek icin acik kaynak Windows araci.
+Turk ISP'lerde (Vodafone, TurkNet, Superonline, TTNet vb.) Discord ve engelli sitelere **VPN kullanmadan** erisim.
 
-[GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) tabanli. **WinDivert** ile ag paketlerini yakalar, DPI engelini atlatir. Bulut servisi degil; bilgisayarinda arka planda calisir.
+[GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) tabanli. [GoodbyeDPI-Turkey](https://github.com/cagritaskn/GoodbyeDPI-Turkey) profilleriyle ISP'ye gore ayar secimi.
 
 ## Kurulum
 
-1. GitHub Actions'tan en son build ZIP'ini indir
-2. Windows DNS: **1.1.1.1** / **1.0.0.1** (Cloudflare)
-3. `C:\KutukDPI\` gibi sabit bir konuma cikar — **tasima**
-4. `HIZMET_KUR.cmd` → cift tik → **Evet**
-
-Arka planda Windows hizmeti olarak calisir. Pencere gerekmez, her acilista otomatik baslar.
+1. GitHub Actions'tan ZIP indir
+2. `C:\KutukDPI\` gibi sabit konuma cikar — **tasima**
+3. `HIZMET_KUR.cmd` → internet saglayicini sec → **Evet**
 
 Kaldirmak: `HIZMET_KALDIR.cmd`
 
-## Gereksinimler
+## ISP profilleri
 
-- Windows 10/11, 64-bit
-- Yonetici yetkisi (kurulumda)
-- KutukDPI klasorunu antivirus dislamalarina ekle
+| Secim | Kim icin |
+|-------|----------|
+| Genel Turkiye | Cogu ISS (varsayilan) |
+| Cloudflare DNS | 1.1.1.1 ayarli kullanicilar |
+| Vodafone | Vodafone hatlari |
+| Vodafone + Discord | Discord.exe hedefli mod |
+| TurkNet / TTNet | Ilgili opertorler |
+| Superonline | 6 alternatif mod (fiber) |
 
-## Bilinen sorunlar
+Detay: [ISP.txt](ISP.txt)
 
-- Discord **web** acilip **uygulama** acilmiyorsa: bkz. [DISCORD.txt](DISCORD.txt)
-- Kaspersky WinDivert ile uyumsuz olabilir
-- Klasor tasinirsa hizmet calismaz
+## Discord sorunlari
 
-## Derleme
-
-```bash
-cd src && make CPREFIX=x86_64-w64-mingw32- BIT64=1 \
-  WINDIVERTHEADERS=../WinDivert/include WINDIVERTLIBS=../WinDivert/x64
-```
+Bkz. [DISCORD.txt](DISCORD.txt)
 
 ## Lisans
 
-Apache 2.0 — bkz. [LICENSE](LICENSE). Atiflar: [CREDITS.md](CREDITS.md)
+Apache 2.0 — [LICENSE](LICENSE), [CREDITS.md](CREDITS.md)

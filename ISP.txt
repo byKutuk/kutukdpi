@@ -1,0 +1,34 @@
+INTERNET SAGLAYICI REHBERI
+==========================
+
+KutukDPI Turkiye, GoodbyeDPI-Turkey profillerine dayanir.
+Kurulumda kendi ISP'ni sec.
+
+GENEL TURKIYE (1)
+  Cogu ISS icin varsayilan. Yandex DNS yonlendirmesi dahil.
+  TurkNet, kablonet ve bilinmeyen ISP'ler icin de dene.
+
+CLOUDFLARE DNS (2)
+  Windows'ta 1.1.1.1 / 1.0.0.1 ayarliysan bunu sec.
+
+VODAFONE (3)
+  Genel Turkiye modu. Web Discord acilir, uygulama acilmayabilir.
+
+VODAFONE + DISCORD (4)
+  Discord domain listesi ile hedefli -9 modu.
+  Uygulama hala acilmazsa web Discord kullan.
+
+TURKNET (5) / TTNET (6)
+  Genel Turkiye modu.
+
+SUPERONLINE (7)
+  Fiber kullanicilar icin 6 alternatif mod:
+  - Mod 4: "Discord update failed" hatasinda dene
+  - Mod 1-2: Windows DNS'i 1.1.1.1 yapman gerekir
+  - Mod 3-5: Yandex DNS yonlendirmesi dahil
+
+PROFIL DEGISTIRME
+  HIZMET_KALDIR.cmd -> HIZMET_KUR.cmd -> baska profil sec
+
+AKTIF PROFIL
+  Kurulumdan sonra profil.txt dosyasina bakilir.

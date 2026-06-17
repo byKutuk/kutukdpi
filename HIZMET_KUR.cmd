@@ -1,50 +1,56 @@
 @echo off
-if /i not "%~1"=="admin" (
-    >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-    if errorlevel 1 (
-        echo Yonetici yetkisi isteniyor, lutfen Evet deyin...
-        powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process -FilePath '%~f0' -ArgumentList 'admin' -Verb RunAs"
-        exit /b
-    )
-)
-
-call "%~dp0_setup.cmd"
-if errorlevel 1 exit /b 1
-
+title KutukDPI Turkiye - ISP Secimi
+cls
 echo ============================================
-echo   KUTUKDPI - ARKA PLAN HIZMETI KURULUMU
+echo   KUTUKDPI TURKIYE - INTERNET SEC
 echo ============================================
 echo.
-echo KutukDPI arka planda calisacak.
-echo ONEMLI: Bu klasoru tasima!  %KUTUK_ROOT%
+echo Hangi internet saglayiciyi kullaniyorsun?
 echo.
-echo DNS onerisi: 1.1.1.1 ve 1.0.0.1 (Cloudflare)
+echo   1  Genel Turkiye      (cogu ISP, onerilen)
+echo   2  Cloudflare DNS     (1.1.1.1 ayarliysan)
+echo   3  Vodafone
+echo   4  Vodafone + Discord hedefli mod
+echo   5  TurkNet
+echo   6  TTNet / Turk Telekom
+echo   7  Turkcell Superonline  (alt menu)
 echo.
+set /p SECIM="Secimin (1-7): "
+
+if "%SECIM%"=="1" call "%~dp0_hizmet_install.cmd" turkiye.cmd & exit /b
+if "%SECIM%"=="2" call "%~dp0_hizmet_install.cmd" cloudflare.cmd & exit /b
+if "%SECIM%"=="3" call "%~dp0_hizmet_install.cmd" vodafone.cmd & exit /b
+if "%SECIM%"=="4" call "%~dp0_hizmet_install.cmd" vodafone_discord.cmd & exit /b
+if "%SECIM%"=="5" call "%~dp0_hizmet_install.cmd" turknet.cmd & exit /b
+if "%SECIM%"=="6" call "%~dp0_hizmet_install.cmd" ttnet.cmd & exit /b
+if "%SECIM%"=="7" goto superonline
+
+echo Gecersiz secim.
 pause
+exit /b 1
 
-echo Eski hizmet kontrol ediliyor (ilk kurulumda uyari normaldir)...
-sc query KutukProxy >nul 2>&1 && (sc stop KutukProxy >nul 2>&1 & sc delete KutukProxy >nul 2>&1)
-sc query KutukDPI >nul 2>&1
-if %errorlevel%==0 (
-    sc stop "KutukDPI" >nul 2>&1
-    sc delete "KutukDPI" >nul 2>&1
-) else (
-    echo Onceki hizmet yok, yeni kurulum yapiliyor...
-)
-
-REM Turkiye/Vodafone icin test edilmis mod (-5 + TTL + Cloudflare DNS)
-sc create "KutukDPI" binPath= "\"%KUTUK_EXE%\" -5 --set-ttl 5 --dns-addr 1.1.1.1 --dns-port 53 --dnsv6-addr 2606:4700:4700::1111 --dnsv6-port 53" start= auto
-if errorlevel 1 (
-    echo [HATA] Hizmet kurulamadi.
-    pause
-    exit /b 1
-)
-
-sc description "KutukDPI" "Vodafone ve Turk ISP'lerde DPI engelini arka planda atlatir."
-sc start "KutukDPI"
-
+:superonline
+cls
+echo ============================================
+echo   TURKCELL SUPERONLINE MODLARI
+echo ============================================
 echo.
-echo KutukDPI arka planda calisiyor.
-echo Discord uygulamasi acilmiyorsa DISCORD.txt dosyasina bak.
-echo Kaldirmak icin: HIZMET_KALDIR.cmd
+echo   1  TTL modu           (DNS'i elle ayarla)
+echo   2  -5 modu            (DNS'i elle ayarla)
+echo   3  TTL + Yandex DNS
+echo   4  -5 + Yandex DNS    (Discord update failed icin)
+echo   5  -9 + Yandex DNS
+echo   6  -9 modu            (DNS'i elle ayarla)
+echo.
+set /p SO="Superonline modu (1-6): "
+
+if "%SO%"=="1" call "%~dp0_hizmet_install.cmd" superonline_1.cmd & exit /b
+if "%SO%"=="2" call "%~dp0_hizmet_install.cmd" superonline_2.cmd & exit /b
+if "%SO%"=="3" call "%~dp0_hizmet_install.cmd" superonline_3.cmd & exit /b
+if "%SO%"=="4" call "%~dp0_hizmet_install.cmd" superonline_4.cmd & exit /b
+if "%SO%"=="5" call "%~dp0_hizmet_install.cmd" superonline_5.cmd & exit /b
+if "%SO%"=="6" call "%~dp0_hizmet_install.cmd" superonline_6.cmd & exit /b
+
+echo Gecersiz secim.
 pause
+exit /b 1

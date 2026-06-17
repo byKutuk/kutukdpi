@@ -4,4 +4,7 @@
 *.sys
 _upstream/
 _turkey_extract/
+_turkey_ref/
 _turkey.zip
+_turkey_ref.zip
+profil.txt

@@ -1,16 +1,20 @@
-KUTUKDPI KURULUM
-================
+KUTUKDPI TURKIYE KURULUM
+========================
 
-1. Windows DNS ayarla (onerilen):
-   Birincil: 1.1.1.1
-   Ikincil:  1.0.0.1
+1. ZIP'i C:\KutukDPI\ gibi sabit yere ac (tasima!)
 
-2. ZIP'i C:\KutukDPI\ gibi sabit bir yere ac (tasima!)
+2. HIZMET_KUR.cmd -> internet saglayicini sec -> Evet
 
-3. HIZMET_KUR.cmd -> cift tik -> Evet
+3. Discord'u ac
 
-4. Discord'u ac
+PROFILLER:
+  1 Genel Turkiye     - cogu ISP (onerilen)
+  2 Cloudflare DNS    - 1.1.1.1 kullaniyorsan
+  3 Vodafone
+  4 Vodafone Discord  - Discord uygulamasi icin
+  5 TurkNet
+  6 TTNet
+  7 Superonline       - 6 alt mod
 
 KALDIR: HIZMET_KALDIR.cmd
-
-SORUN: Discord uygulamasi acilmiyorsa -> DISCORD.txt
+DETAY: ISP.txt ve DISCORD.txt
