@@ -20,8 +20,14 @@ echo ONEMLI: Bu klasoru tasima!  %KUTUK_ROOT%
 echo.
 pause
 
-sc stop "KutukDPI" 2>nul
-sc delete "KutukDPI" 2>nul
+echo Eski hizmet kontrol ediliyor (ilk kurulumda uyari normaldir)...
+sc query KutukDPI >nul 2>&1
+if %errorlevel%==0 (
+    sc stop "KutukDPI" >nul 2>&1
+    sc delete "KutukDPI" >nul 2>&1
+) else (
+    echo Onceki hizmet yok, yeni kurulum yapiliyor...
+)
 
 REM Turkiye/Vodafone icin test edilmis mod (-5 + TTL + DNS)
 sc create "KutukDPI" binPath= "\"%KUTUK_EXE%\" -5 --set-ttl 5 --dns-addr 77.88.8.8 --dns-port 1253 --dnsv6-addr 2a02:6b8::feed:0ff --dnsv6-port 1253" start= auto
