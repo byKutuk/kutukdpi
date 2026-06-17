@@ -27,31 +27,26 @@ Hicbir uzak sunucuya baglanmaz; her sey bilgisayarinizda yerel olarak calisir.
 
 ### Kurulum
 
-1. [Releases](https://github.com/byKutuk/kutukdpi/releases) sayfasindan en son surumu indirin
-2. ZIP dosyasini sabit bir konuma cikartin (ornegin `C:\KutukDPI\`)
-3. Asagidaki yontemlerden birini secin
+1. [Releases](https://github.com/byKutuk/kutukdpi/releases) veya GitHub Actions'tan en son surumu indirin
+2. ZIP dosyasini sabit bir konuma cikartin (ornegin `C:\KutukDPI\`) — **klasoru tasimayin**
+3. `HIZMET_KUR.cmd` dosyasina cift tiklayin → **Evet** (yonetici)
 
-### Yontem 1: Tek seferlik (onerilen deneme)
+KutukDPI arka planda Windows hizmeti olarak calisir. Pencere acik tutmaniza gerek yoktur; bilgisayar her acildiginda otomatik baslar.
 
-`vodafone_discord.cmd` dosyasina sag tik → **Yonetici olarak calistir**
+Kaldirmak icin: `HIZMET_KALDIR.cmd`
 
-- Discord odakli mod (`-9` + Discord domain listesi)
-- Konsol penceresi kapaninca program durur
+### Gecici test (tek seferlik)
 
-### Yontem 2: Windows hizmeti (otomatik baslatma)
-
-`service_install_vodafone.cmd` dosyasina sag tik → **Yonetici olarak kalistir**
-
-- Bilgisayar her acildiginda KutukDPI otomatik baslar
-- Kaldirmak icin: `service_remove.cmd` (yonetici olarak)
+`BASLAT.cmd` veya `BASLAT_TAM.cmd` — konsol penceresi kapaninca program durur.
 
 ### Alternatif modlar
 
 | Dosya | Ne zaman? |
 |-------|-----------|
-| `vodafone_discord.cmd` | Ilk deneme — Discord icin optimize |
-| `vodafone_discord_alternative.cmd` | Ilk mod calismazsa (TTL tabanli) |
-| `vodafone_discord_full.cmd` | Sadece Discord yetmiyorsa, tum trafik |
+| `HIZMET_KUR.cmd` | **Onerilen** — arka plan, otomatik baslatma |
+| `BASLAT_TAM.cmd` | Hizmet kurmadan tam mod test |
+| `BASLAT_DISCORD_UYGULAMA.cmd` | Masaustu Discord uygulamasi icin |
+| `BASLAT_VODAFONE.cmd` | Vodafone TTL alternatif mod |
 
 ## Kaynaktan derleme
 
