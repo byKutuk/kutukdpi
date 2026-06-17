@@ -9,5 +9,4 @@ KUTUKDPI KURULUM
 
 KALDIR: HIZMET_KALDIR.cmd
 
-SORUN: Tarayici aciliyor ama uygulama acilmiyorsa
-       Chrome/Edge'de discord.com -> "Uygulama olarak yukle"
+SORUN: Discord uygulamasi acilmiyorsa -> DISCORD.txt

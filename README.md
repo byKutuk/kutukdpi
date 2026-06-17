@@ -22,7 +22,7 @@ Kaldirmak: `HIZMET_KALDIR.cmd`
 
 ## Bilinen sorunlar
 
-- Discord **web** acilip **uygulama** acilmiyorsa: tarayicidan "Uygulama olarak yukle"
+- Discord **web** acilip **uygulama** acilmiyorsa: bkz. [DISCORD.txt](DISCORD.txt) — tarayicidan "Uygulama olarak yukle" en kolay cozum
 - Kaspersky WinDivert ile uyumsuz olabilir
 - Klasor tasinirsa hizmet calismaz
 

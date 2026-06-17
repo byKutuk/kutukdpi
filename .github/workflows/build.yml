@@ -61,7 +61,7 @@ jobs:
         run: |
           mkdir -p release/x86_64
           cp src/kutukdpi.exe ${{ env.WINDIVERT_BASENAME }}/x64/WinDivert.dll ${{ env.WINDIVERT_BASENAME }}/x64/WinDivert64.sys release/x86_64/
-          cp HIZMET_KUR.cmd HIZMET_KALDIR.cmd _setup.cmd KURULUM.txt README.md LICENSE release/
+          cp HIZMET_KUR.cmd HIZMET_KALDIR.cmd discord_temizle.cmd _setup.cmd KURULUM.txt DISCORD.txt README.md LICENSE release/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v5

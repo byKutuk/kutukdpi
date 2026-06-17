@@ -1,0 +1,29 @@
+DISCORD UYGULAMASI ACILMIYORSA
+================================
+
+Web aciliyor = KutukDPI CALISIYOR. Sorun masaustu uygulamasinda.
+Vodafone'da bu cok yaygin.
+
+COZUM 1 - EN KOLAY (ONERILEN)
+-----------------------------
+Chrome veya Edge:
+  discord.com -> giris yap -> adres cubugunda "Uygulama olarak yukle"
+Masaustunden normal uygulama gibi kullanirsin.
+
+COZUM 2 - VPN ILE BIR KEZ AC
+----------------------------
+1. KutukDPI acik kalsin (HIZMET_KUR kurulu)
+2. Telefon hotspot VPN veya ucretsiz VPN ac
+3. Discord uygulamasini ac, tam yuklensin
+4. VPN kapat, Discord acik kalsin
+
+COZUM 3 - ONBELLEK TEMIZLE
+--------------------------
+1. Gorev Yoneticisi -> Discord'u kapat
+2. discord_temizle.cmd calistir
+3. HIZMET_KALDIR.cmd -> HIZMET_KUR.cmd (yeniden kur)
+4. Discord'u tekrar ac
+
+NOT: Bazi Vodafone/fiber hatlarda masaustu Discord.exe
+KutukDPI ile acilmayabilir. Bu ISP sinirlamasi;
+web/PWA cozumu ayni isi gorur.

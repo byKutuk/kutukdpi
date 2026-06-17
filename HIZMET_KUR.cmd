@@ -16,22 +16,16 @@ echo   KUTUKDPI - ARKA PLAN HIZMETI KURULUMU
 echo ============================================
 echo.
 echo KutukDPI arka planda calisacak.
-echo Pencere acmana gerek kalmaz, bilgisayar her
-echo acildiginda otomatik baslar.
-echo.
-echo ONEMLI: Bu klasoru tasima!
-echo Konum: %KUTUK_ROOT%
+echo ONEMLI: Bu klasoru tasima!  %KUTUK_ROOT%
 echo.
 pause
 
-echo Eski hizmet kaldiriliyor...
 sc stop "KutukDPI" 2>nul
 sc delete "KutukDPI" 2>nul
 
-echo Hizmet kuruluyor...
-sc create "KutukDPI" binPath= "\"%KUTUK_EXE%\" -9 --dns-addr 77.88.8.8 --dns-port 1253 --dnsv6-addr 2a02:6b8::feed:0ff --dnsv6-port 1253" start= auto
+REM Turkiye/Vodafone icin test edilmis mod (-5 + TTL + DNS)
+sc create "KutukDPI" binPath= "\"%KUTUK_EXE%\" -5 --set-ttl 5 --dns-addr 77.88.8.8 --dns-port 1253 --dnsv6-addr 2a02:6b8::feed:0ff --dnsv6-port 1253" start= auto
 if errorlevel 1 (
-    echo.
     echo [HATA] Hizmet kurulamadi.
     pause
     exit /b 1
@@ -41,14 +35,7 @@ sc description "KutukDPI" "Vodafone ve Turk ISP'lerde DPI engelini arka planda a
 sc start "KutukDPI"
 
 echo.
-echo ============================================
-echo   TAMAM! KutukDPI arka planda calisiyor.
-echo ============================================
-echo.
-echo - Pencere yok, arka planda devam eder
-echo - Bilgisayar her acildiginda otomatik baslar
-echo - Discord'u normal acabilirsin
-echo.
+echo KutukDPI arka planda calisiyor.
+echo Discord uygulamasi acilmiyorsa DISCORD.txt dosyasina bak.
 echo Kaldirmak icin: HIZMET_KALDIR.cmd
-echo.
 pause
