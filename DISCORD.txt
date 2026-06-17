@@ -1,29 +1,39 @@
 DISCORD UYGULAMASI ACILMIYORSA
 ================================
 
-Web aciliyor = KutukDPI CALISIYOR. Sorun masaustu uygulamasinda.
-Vodafone'da bu cok yaygin.
+ONEMLI: Tarayici Discord'u KutukDPI olmadan da acabilir!
+Chrome ve Edge "Guvenli DNS" kullanir, Vodafone DNS engelini atlar.
+Hizmeti kaldirdigin halde web aciliyorsa bu normaldir.
+
+Masaustu Discord.exe ise sistem DNS kullanir ve Vodafone'da
+cogu zaman KutukDPI ile bile acilmaz. Bu senin hatan degil.
 
 COZUM 1 - EN KOLAY (ONERILEN)
 -----------------------------
 Chrome veya Edge:
-  discord.com -> giris yap -> adres cubugunda "Uygulama olarak yukle"
-Masaustunden normal uygulama gibi kullanirsin.
+  discord.com -> giris yap -> "Uygulama olarak yukle"
+Gercek uygulama gibi masaustunden kullanirsin. En guvenilir yol.
 
-COZUM 2 - VPN ILE BIR KEZ AC
-----------------------------
-1. KutukDPI acik kalsin (HIZMET_KUR kurulu)
+COZUM 2 - VPN ILE BIR KEZ AC (.exe istiyorsan)
+----------------------------------------------
+1. Gorev Yoneticisi -> Discord kapali olsun
 2. Telefon hotspot VPN veya ucretsiz VPN ac
-3. Discord uygulamasini ac, tam yuklensin
-4. VPN kapat, Discord acik kalsin
+3. Discord uygulamasini ac, tam yuklensin, giris yap
+4. VPN kapat - Discord acik kalsin
+(KutukDPI sart degil bu yontemde)
 
-COZUM 3 - ONBELLEK TEMIZLE
---------------------------
-1. Gorev Yoneticisi -> Discord'u kapat
-2. discord_temizle.cmd calistir
-3. HIZMET_KALDIR.cmd -> HIZMET_KUR.cmd (yeniden kur)
-4. Discord'u tekrar ac
+COZUM 3 - ONBELLEK TEMIZLE + TEKRAR DENE
+----------------------------------------
+1. Discord'u Gorev Yoneticisinden kapat
+2. discord_temizle.cmd
+3. HIZMET_KUR.cmd
+4. Discord uygulamasini ac
 
-NOT: Bazi Vodafone/fiber hatlarda masaustu Discord.exe
-KutukDPI ile acilmayabilir. Bu ISP sinirlamasi;
-web/PWA cozumu ayni isi gorur.
+HALA OLMUYORSA
+--------------
+Vodafone hattinda Discord.exe icin KutukDPI yetmeyebilir.
+SplitWire-Turkey gibi sadece Discord.exe hedefleyen araclar
+bu durumda daha iyi calisir:
+https://github.com/cagritaskn/SplitWire-Turkey
+
+Web veya "uygulama olarak yukle" ile devam etmek en pratik cozumdur.

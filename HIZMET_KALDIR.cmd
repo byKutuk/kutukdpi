@@ -7,14 +7,18 @@ if /i not "%~1"=="admin" (
     )
 )
 
-echo KutukDPI arka plan hizmeti kaldiriliyor...
-sc stop "KutukDPI"
-sc delete "KutukDPI"
+echo KutukDPI durduruluyor...
+taskkill /F /IM kutukdpi.exe 2>nul
+taskkill /F /IM goodbyedpi.exe 2>nul
+sc stop "KutukDPI" 2>nul
+sc delete "KutukDPI" 2>nul
 sc stop "WinDivert" 2>nul
 sc delete "WinDivert" 2>nul
 sc stop "WinDivert14" 2>nul
 sc delete "WinDivert14" 2>nul
 
 echo.
-echo Hizmet kaldirildi. KutukDPI artik arka planda calismiyor.
+echo KutukDPI tamamen kaldirildi.
+echo Not: Tarayicida Discord acilmasi normal - Chrome/Edge
+echo kendi DNS kullanir, KutukDPI'ye bagli degildir.
 pause
