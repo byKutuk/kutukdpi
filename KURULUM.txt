@@ -1,0 +1,26 @@
+KUTUKDPI - HIZLI KURULUM
+========================
+
+1) GitHub Actions'tan indirdigin ZIP'i ac
+   Ornek: C:\KutukDPI\
+
+2) Klasor icinde SU DOSYALAR olmali:
+   x86_64\kutukdpi.exe
+   x86_64\WinDivert.dll
+   x86_64\WinDivert64.sys
+   lists\discord.txt
+   BASLAT.cmd
+
+3) BASLAT.cmd dosyasina CIFT TIKLA
+   - "Yonetici olarak calistir" sormaz, otomatik UAC cikar
+   - "Evet" de
+   - Acilan pencereyi KAPATMA
+
+4) Discord'u ac
+
+CALISMAZSA:
+- vodafone_discord_alternative.cmd dene
+- Antivirus KutukDPI klasorunu dislama listesine ekle
+
+NOT: Sadece .cmd dosyasini kopyalama!
+     Tum ZIP icerigini ayni klasore cikar.
