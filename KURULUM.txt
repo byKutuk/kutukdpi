@@ -1,32 +1,13 @@
-KUTUKDPI - HIZLI KURULUM
-========================
+KUTUKDPI KURULUM
+================
 
-1) GitHub Actions'tan indirdigin ZIP'i ac
-   Ornek: C:\KutukDPI\
-   (Bu klasoru TASIMA!)
+1. ZIP'i C:\KutukDPI\ gibi sabit bir yere ac (tasima!)
 
-2) Klasor icinde su dosyalar olmali:
-   x86_64\kutukdpi.exe
-   x86_64\WinDivert.dll
-   x86_64\WinDivert64.sys
-   lists\discord.txt
-   HIZMET_KUR.cmd
+2. HIZMET_KUR.cmd -> cift tik -> Evet
 
-3) HIZMET_KUR.cmd dosyasina CIFT TIKLA  << ONERILEN
-   - Evet de (yonetici)
-   - KutukDPI arka planda calisir
-   - Pencere acik tutmana GEREK YOK
-   - Bilgisayar her acildiginda otomatik baslar
+3. Discord'u ac
 
-4) Discord'u ac
+KALDIR: HIZMET_KALDIR.cmd
 
-KALDIRMAK ICIN:
-   HIZMET_KALDIR.cmd
-
-GEICI TEST (pencere acik kalmali):
-   BASLAT.cmd veya BASLAT_TAM.cmd
-
-DISCORD UYGULAMASI ACILMIYORSA:
-   DISCORD_UYGULAMA.txt dosyasina bak
-
-NOT: Tum ZIP icerigini ayni klasore cikar.
+SORUN: Tarayici aciliyor ama uygulama acilmiyorsa
+       Chrome/Edge'de discord.com -> "Uygulama olarak yukle"

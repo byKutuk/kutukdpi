@@ -5,7 +5,6 @@ on:
     paths:
       - 'src/**'
       - '.github/workflows/build.yml'
-      - 'lists/**'
       - '*.cmd'
   pull_request:
     paths:
@@ -60,12 +59,9 @@ jobs:
 
       - name: Prepare release directory
         run: |
-          mkdir -p release/x86_64 release/lists
+          mkdir -p release/x86_64
           cp src/kutukdpi.exe ${{ env.WINDIVERT_BASENAME }}/x64/WinDivert.dll ${{ env.WINDIVERT_BASENAME }}/x64/WinDivert64.sys release/x86_64/
-          cp lists/discord.txt release/lists/
-          cp vodafone_discord.cmd vodafone_discord_alternative.cmd vodafone_discord_full.cmd release/
-          cp HIZMET_KUR.cmd HIZMET_KALDIR.cmd BASLAT.cmd BASLAT_TAM.cmd BASLAT_VODAFONE.cmd BASLAT_DISCORD_UYGULAMA.cmd discord_onbellek_temizle.cmd _setup.cmd service_install_vodafone.cmd service_remove.cmd release/
-          cp KURULUM.txt SORUN_GIDERME.txt DISCORD_UYGULAMA.txt README.md LICENSE CREDITS.md release/
+          cp HIZMET_KUR.cmd HIZMET_KALDIR.cmd _setup.cmd KURULUM.txt README.md LICENSE release/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v5
