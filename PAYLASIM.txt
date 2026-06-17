@@ -1,0 +1,48 @@
+PAYLASIM REHBERI
+===============
+
+PROJENIN ADRESI
+  https://github.com/byKutuk/kutukdpi
+
+INSANLAR NASIL INDIRIR?
+  https://github.com/byKutuk/kutukdpi/releases
+  (Releases sayfasindan ZIP indirilir)
+
+ILK RELEASE NASIL OLUSTURULUR?
+  1. github.com/byKutuk/kutukdpi ac
+  2. Actions -> "Release KutukDPI" -> Run workflow
+  3. version: v0.2.0 yaz -> Run
+  4. Birkaç dakika sonra Releases sayfasinda ZIP cikar
+
+NEREDE PAYLASILIR?
+
+  GitHub (ana kaynak)
+    - Repoyu public birak
+    - Releases linkini paylas
+
+  Technopat Sosyal
+    - Konu ac: "KutukDPI Turkiye - acik kaynak DPI araci"
+    - Releases linki + kisa kurulum
+    - Kural: reklam spam yapma, teknik acikla
+
+  Reddit
+    - r/Turkey, r/Turkiye (kurallara uy)
+    - Acik kaynak oldugunu belirt
+
+  Discord sunuculari
+    - Oyun / Turk dev topluluklari
+    - Sadece izin varsa paylas
+
+  Twitter / X
+    - #KutukDPI #GoodbyeDPI #Discord
+    - GitHub Releases linki
+
+PAYLASIRKEN YAZILACAKLAR
+  - Ucretsiz ve acik kaynak
+  - VPN degil, yerel arac
+  - Yonetici yetkisi gerekir
+  - Vodafone'da Discord uygulamasi her zaman acilmayabilir
+  - Antivirus false positive olabilir (WinDivert)
+
+LISANS
+  Apache 2.0 - paylasim serbest, kaynak goster

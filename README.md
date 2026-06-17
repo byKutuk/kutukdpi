@@ -4,9 +4,15 @@ Turk ISP'lerde (Vodafone, TurkNet, Superonline, TTNet vb.) Discord ve engelli si
 
 [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) tabanli. [GoodbyeDPI-Turkey](https://github.com/cagritaskn/GoodbyeDPI-Turkey) profilleriyle ISP'ye gore ayar secimi.
 
+## Indir
+
+**En kolay:** [Releases](https://github.com/byKutuk/kutukdpi/releases) sayfasindan `KutukDPI-Turkiye-x86_64.zip` indir.
+
+Alternatif: GitHub → Actions → son build → Artifacts.
+
 ## Kurulum
 
-1. GitHub Actions'tan ZIP indir
+1. ZIP'i indir
 2. `C:\KutukDPI\` gibi sabit konuma cikar — **tasima**
 3. `HIZMET_KUR.cmd` → internet saglayicini sec → **Evet**
 
