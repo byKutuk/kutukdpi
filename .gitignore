@@ -1,0 +1,7 @@
+*.o
+*.exe
+*.dll
+*.sys
+_upstream/
+_turkey_extract/
+_turkey.zip
